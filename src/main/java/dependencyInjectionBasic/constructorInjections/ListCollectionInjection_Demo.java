@@ -13,7 +13,7 @@ public class ListCollectionInjection_Demo {
 		ApplicationContext context = new ClassPathXmlApplicationContext("appCtxListCollectionInjection.xml");
 
 		System.out.println("List Collection Injection in Constructor argument");
-		PhoneOwner user1 = (PhoneOwner) context.getBean("phoneOwnerBean");
+		PhoneOwner user1 = (PhoneOwner) context.getBean("singlePhoneOwnerBean");
 		user1.displayOwner();
 
 		System.out.println("Contacts:");
@@ -21,7 +21,9 @@ public class ListCollectionInjection_Demo {
 		phonebook.displayContacts();
 		phonebook.displayInstantiationMethod();
 		phonebook.displayOwner();
-
+		
+		user1=(PhoneOwner) context.getBean("multiplePhoneOwnerBean");
+		user1.displayOwnerPhones();
 	}
 
 }

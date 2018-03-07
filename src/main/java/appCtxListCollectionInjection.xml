@@ -10,18 +10,38 @@
 		<constructor-arg value="Brown"></constructor-arg>
 	</bean>
 
-	<bean id="phoneOwnerBean" class="dependencyInjectionBasic.PhoneOwner">
+	<bean id="smartPhoneBean2" class="dependencyInjectionBasic.Phone">
+		<constructor-arg value="Samsung"></constructor-arg>
+		<constructor-arg value="Galaxy S9"></constructor-arg>
+		<constructor-arg value="Black"></constructor-arg>
+	</bean>
+
+	<!-- Phone Owner with one phone injected -->
+	<bean id="singlePhoneOwnerBean" class="dependencyInjectionBasic.PhoneOwner">
 		<constructor-arg value="1" type="int"></constructor-arg>
-		<constructor-arg value="András"></constructor-arg>
+		<constructor-arg value="Single phone owner"></constructor-arg>
 		<constructor-arg>
 			<ref bean="smartPhoneBean"></ref>
+		</constructor-arg>
+	</bean>
+
+	<!-- Phone Owner with multiple phone objects injected as list -->
+	<bean id="multiplePhoneOwnerBean" class="dependencyInjectionBasic.PhoneOwner">
+		<constructor-arg value="2" type="int"></constructor-arg>
+		<constructor-arg value="Multi phone owner"></constructor-arg>
+		<constructor-arg>
+		<list>
+		<ref bean="smartPhoneBean"></ref>
+		<ref bean="smartPhoneBean"></ref>
+		<ref bean="smartPhoneBean2"></ref>
+		</list>
 		</constructor-arg>
 	</bean>
 
 	<bean id="phoneBookBean" class="dependencyInjectionBasic.Phonebook">
 		<constructor-arg value="1" type="int"></constructor-arg>
 		<constructor-arg>
-			<ref bean="phoneOwnerBean"></ref>
+			<ref bean="singlePhoneOwnerBean"></ref>
 		</constructor-arg>
 		<constructor-arg>
 			<list>
