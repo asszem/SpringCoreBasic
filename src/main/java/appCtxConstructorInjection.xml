@@ -4,23 +4,23 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans  
                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="phoneUserBean" class="springBasic.PhoneUser">
+	<bean id="phoneUserBean" class="dependencyInjectionBasic.PhoneUser">
 		<constructor-arg value="10" type="int"></constructor-arg>
 	</bean>
-	<bean id="phoneUserBean2" class="springBasic.PhoneUser">
+	<bean id="phoneUserBean2" class="dependencyInjectionBasic.PhoneUser">
 		<constructor-arg value="Constructor Arg Name" type="String"></constructor-arg>
 	</bean>
-	<bean id="phoneUserBean3" class="springBasic.PhoneUser">
+	<bean id="phoneUserBean3" class="dependencyInjectionBasic.PhoneUser">
 		<constructor-arg value="Constructor Arg Name and Setter for Id(123)"
 			type="String"></constructor-arg>
 		<property name="userId" value="123"></property>
 	</bean>
-	<bean id="phoneUserBean4" class="springBasic.PhoneUser">
+	<bean id="phoneUserBean4" class="dependencyInjectionBasic.PhoneUser">
 		<constructor-arg value="Original Constructor Arg Name"
 			type="String"></constructor-arg>
 		<property name="userName" value="Setter Name"></property>
 	</bean>
-	<bean id="phoneUserBean5" class="springBasic.PhoneUser">
+	<bean id="phoneUserBean5" class="dependencyInjectionBasic.PhoneUser">
 	</bean>
 
 </beans>  

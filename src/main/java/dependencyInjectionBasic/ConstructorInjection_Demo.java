@@ -1,5 +1,5 @@
 //Source: https://www.javatpoint.com/steps-to-create-spring-application
-package springBasic;
+package dependencyInjectionBasic;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
@@ -8,9 +8,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
-public class ConstructorDIDemo {
+public class ConstructorInjection_Demo {
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContextConstructorInjection.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("appCtxConstructorInjection.xml");
 
 		System.out.println("Dependency Injection by Constructor arguments");
 		PhoneUser user1 = (PhoneUser) context.getBean("phoneUserBean");
