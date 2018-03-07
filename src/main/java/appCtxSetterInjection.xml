@@ -4,11 +4,11 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans  
                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="phoneUserBean" class="dependencyInjectionBasic.PhoneUser">
+	<bean id="phoneUserBean" class="dependencyInjectionBasic.PhoneOwner">
 		<property name="userName" value="User from BeanFactory"></property>
 		<property name="userId" value="1"></property>
 	</bean>
-	<bean id="phoneUserBean2" class="dependencyInjectionBasic.PhoneUser">
+	<bean id="phoneUserBean2" class="dependencyInjectionBasic.PhoneOwner">
 		<property name="userName" value="User from ApplicationContext"></property>
 		<property name="userId" value="2"></property>
 	</bean>

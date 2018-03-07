@@ -10,7 +10,7 @@
 		<constructor-arg value="Brown"></constructor-arg>
 	</bean>
 
-	<bean id="phoneUserBean" class="dependencyInjectionBasic.PhoneUser">
+	<bean id="phoneUserBean" class="dependencyInjectionBasic.PhoneOwner">
 		<constructor-arg ><ref bean="smartPhoneBean"></ref></constructor-arg>
 		<constructor-arg value="100" type="int" ></constructor-arg>
 		<constructor-arg value="Huawei Owner"></constructor-arg>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" strict="true">
+
+
+ <Properties>
+    <Property name="infoPattern">%d{HH:mm:ss} - %msg [Class:%class] %level %d%n</Property>
+    <Property name="fileName">logs/loggerOutput.txt</Property>
+  </Properties>
+  
+  
+	<Appenders>
+
+		<Appender type="Console" name="STDOUT">
+			<Layout type="PatternLayout" pattern="${infoPattern}" />
+		</Appender>
+
+		<Appender type="File" name="File" fileName="${fileName}"
+			append="false">
+			<Layout type="PatternLayout">
+				<Pattern>${infoPattern}</Pattern>
+			</Layout>
+		</Appender>
+	</Appenders>
+
+	<Loggers>
+		<!-- <Logger name="filelogger" level="info" additivity="true"> -->
+		<!-- <AppenderRef ref="File" /> -->
+		<!-- </Logger> -->
+		<Root level="info">
+			<AppenderRef ref="STDOUT" />
+			<AppenderRef ref="File" />
+		</Root>
+	</Loggers>
+
+</Configuration>

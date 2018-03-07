@@ -1,5 +1,5 @@
 //Source: https://www.javatpoint.com/steps-to-create-spring-application
-package dependencyInjectionBasic;
+package dependencyInjectionBasic.setterInjections;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
@@ -7,6 +7,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
+
+import dependencyInjectionBasic.PhoneOwner;
 
 public class SetterInjection_Demo {
 	public static void main(String[] args) {
@@ -18,11 +20,11 @@ public class SetterInjection_Demo {
 		ApplicationContext context = new ClassPathXmlApplicationContext("appCtxSetterInjection.xml");
 
 		System.out.println("\nDependency Injection by Setter methods");
-		PhoneUser user1 = (PhoneUser) factory.getBean("phoneUserBean");
-		user1.displayUser();
+		PhoneOwner user1 = (PhoneOwner) factory.getBean("phoneUserBean");
+		user1.displayOwner();
 
-		PhoneUser user2 = (PhoneUser) context.getBean("phoneUserBean2");
-		user2.displayUser();
+		PhoneOwner user2 = (PhoneOwner) context.getBean("phoneUserBean2");
+		user2.displayOwner();
 	}
 
 }
