@@ -9,7 +9,7 @@ import dependencyInjectionBasic.PhoneSeller;
 public class MapCollectionInjection_Demo {
 	public static void main(String[] args) {
 
-		ApplicationContext context = new ClassPathXmlApplicationContext("appCtxMapCollectionInjection.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("/dependencyInjectionBasic/constructorInjections/appCtxMapCollectionInjection.xml");
 
 		System.out.println("Map Collection Injection in Constructor argument");
 		PhoneSeller seller = (PhoneSeller) context.getBean("sellerBean");

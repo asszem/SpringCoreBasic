@@ -10,7 +10,7 @@ import dependencyInjectionBasic.Phonebook;
 public class ListCollectionInjection_Demo {
 	public static void main(String[] args) {
 
-		ApplicationContext context = new ClassPathXmlApplicationContext("appCtxListCollectionInjection.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("/dependencyInjectionBasic/constructorInjections/appCtxListCollectionInjection.xml");
 
 		System.out.println("List Collection Injection in Constructor argument");
 		PhoneOwner user1=(PhoneOwner) context.getBean("multiplePhoneOwnerBean");

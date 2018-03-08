@@ -8,7 +8,7 @@ import dependencyInjectionBasic.PhoneOwner;
 
 public class ConstructorInjection_Demo {
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("appCtxConstructorInjection.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("/dependencyInjectionBasic/constructorInjections/appCtxConstructorInjection.xml");
 
 		System.out.println("\nDependency Injection by Constructor arguments");
 		System.out.print("\nInstantiating object without any const-arg value in application context xml:");

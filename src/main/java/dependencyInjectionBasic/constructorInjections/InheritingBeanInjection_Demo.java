@@ -9,7 +9,7 @@ import dependencyInjectionBasic.PhoneSeller;
 public class InheritingBeanInjection_Demo {
 	public static void main(String[] args) {
 
-		ApplicationContext context = new ClassPathXmlApplicationContext("appCtxInheritingBean.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("/dependencyInjectionBasic/constructorInjections/appCtxInheritingBean.xml");
 
 		System.out.println("Inheriting Bean in Constructor argument");
 		PhoneSeller seller = (PhoneSeller) context.getBean("originalSellerBean");
