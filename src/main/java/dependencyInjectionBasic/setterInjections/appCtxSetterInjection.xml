@@ -4,11 +4,36 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans  
                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="phoneUserBean" class="dependencyInjectionBasic.PhoneOwner">
-		<property name="ownerName" value="User from BeanFactory"></property>
+	<import resource="../PhoneBeans.xml"></import>
+
+	<!-- String and Object Setter injection -->
+	<bean id="ownerNameBySetter" class="dependencyInjectionBasic.PhoneOwner">
+		<property name="ownerName" value="Owner Name from Setter" />
+		<property name="ownerPhone" ref="samsungPhone" />
 	</bean>
-	<bean id="phoneUserBean2" class="dependencyInjectionBasic.PhoneOwner">
-		<property name="ownerName" value="User from ApplicationContext"></property>
+
+	<!-- List Setter injection -->
+	<bean id="multiplePhoneOwnerBySetter" class="dependencyInjectionBasic.PhoneOwner">
+		<property name="ownerPhones">
+			<list>
+				<ref bean="samsungPhone"></ref>
+				<ref bean="samsungPhoneInherited"></ref>
+				<ref bean="huaweiPhone"></ref>
+			</list>
+		</property>
+	</bean>
+
+	<!-- Injecting multiple setters (a Map Setter AND a String setter) -->
+	<bean id="sellerMapBySetter" class="dependencyInjectionBasic.PhoneSeller">
+		<!-- for setSellerName() method -->
+		<property name="sellerName" value="Seller Map Setter Injection" />
+		<!-- for setSellerCustomers() method -->
+		<property name="sellerCustomers">
+			<map>
+				<entry key="customer1" value-ref="ownerNameBySetter" />
+				<entry key="customer2" value-ref="multiplePhoneOwnerBySetter" />
+			</map>
+		</property>
 	</bean>
 
 </beans>  

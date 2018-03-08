@@ -4,43 +4,32 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans  
                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="huaweiPhone" class="dependencyInjectionBasic.Phone">
-		<constructor-arg value="Huawei"></constructor-arg>
-		<constructor-arg value="P10"></constructor-arg>
-		<constructor-arg value="Brown"></constructor-arg>
-	</bean>
-
-	<bean id="samsungPhone" class="dependencyInjectionBasic.Phone">
-		<constructor-arg value="Samsung"></constructor-arg>
-		<constructor-arg value="Galaxy S9"></constructor-arg>
-		<constructor-arg value="Black"></constructor-arg>
-	</bean>
+	<import resource="../PhoneBeans.xml"></import>
 
 	<!-- Phone Owner with one phone injected -->
 	<bean id="singlePhoneOwnerBean" class="dependencyInjectionBasic.PhoneOwner">
-		<constructor-arg value="Huawei Henry"></constructor-arg>
+		<constructor-arg value="Huawei Henry" />
 		<constructor-arg>
-			<ref bean="huaweiPhone"></ref>
+			<ref bean="huaweiPhone" />
 		</constructor-arg>
 	</bean>
 
 	<!-- Phone Owner with one phone injected -->
 	<bean id="singlePhoneOwnerBean2" class="dependencyInjectionBasic.PhoneOwner">
-		<constructor-arg value="Samsung Sam"></constructor-arg>
+		<constructor-arg value="Samsung Sam" />
 		<constructor-arg>
-			<ref bean="samsungPhone"></ref>
+			<ref bean="samsungPhone" />
 		</constructor-arg>
 	</bean>
 
 	<!-- Injecting Map collection with a String and an Object bean reference -->
 	<bean id="sellerBean" class="dependencyInjectionBasic.PhoneSeller">
-		<constructor-arg value="Seller Name"></constructor-arg>
+		<constructor-arg value="Seller Name" />
 		<constructor-arg>
 			<map>
-				<entry key="customer1" value-ref="singlePhoneOwnerBean"></entry>
-				<entry key="customer2" value-ref="singlePhoneOwnerBean2"></entry>
+				<entry key="customer1" value-ref="singlePhoneOwnerBean" />
+				<entry key="customer2" value-ref="singlePhoneOwnerBean2" />
 			</map>
-
 		</constructor-arg>
 	</bean>
 

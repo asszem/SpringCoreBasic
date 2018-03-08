@@ -47,9 +47,20 @@ public class PhoneOwner {
 
 	}
 
-	// Setter methods MUST be defined for passing value (dependency injection) from the Application Context
+	// Setter methods MUST be defined for property based dependency injection
 	public void setOwnerName(String newOwnerName) {
 		this.ownerName = newOwnerName;
+		log.info("Phone Owner name set by Setter method for OwnerID: " + ownerId);
+	}
+
+	public void setOwnerPhone(Phone phone) {
+		this.ownerPhone=phone;
+		log.info("Phone Owner Phone set by Setter method for OwnerID: " + ownerId);
+	}
+	
+	public void setOwnerPhones(List<Phone> phones) {
+		this.ownerPhones=phones;
+		log.info("Phone Owner List<Phone> phones set by Setter method for OwnerID: " + ownerId);
 	}
 
 	public void displayOwner() {

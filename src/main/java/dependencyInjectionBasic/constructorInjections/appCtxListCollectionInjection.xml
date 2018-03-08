@@ -5,25 +5,25 @@
                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
 	<bean id="smartPhoneBean" class="dependencyInjectionBasic.Phone">
-		<constructor-arg value="Huawei"></constructor-arg>
-		<constructor-arg value="P10"></constructor-arg>
-		<constructor-arg value="Brown"></constructor-arg>
+		<constructor-arg value="Huawei" />
+		<constructor-arg value="P10" />
+		<constructor-arg value="Brown" />
 	</bean>
 
 	<bean id="smartPhoneBean2" class="dependencyInjectionBasic.Phone">
-		<constructor-arg value="Samsung"></constructor-arg>
-		<constructor-arg value="Galaxy S9"></constructor-arg>
-		<constructor-arg value="Black"></constructor-arg>
+		<constructor-arg value="Samsung" />
+		<constructor-arg value="Galaxy S9" />
+		<constructor-arg value="Black" />
 	</bean>
 
 	<!-- Phone Owner with multiple phone objects injected as list elements -->
 	<bean id="multiplePhoneOwnerBean" class="dependencyInjectionBasic.PhoneOwner">
-		<constructor-arg value="Multi phone owner"></constructor-arg>
+		<constructor-arg value="Multi phone owner" />
 		<constructor-arg>
 			<list>
-				<ref bean="smartPhoneBean"></ref>
-				<ref bean="smartPhoneBean"></ref>
-				<ref bean="smartPhoneBean2"></ref>
+				<ref bean="smartPhoneBean" />
+				<ref bean="smartPhoneBean" />
+				<ref bean="smartPhoneBean2" />
 			</list>
 		</constructor-arg>
 	</bean>
@@ -31,7 +31,7 @@
 	<!-- Phone book with multiple String values injected as list elements -->
 	<bean id="phoneBookBean" class="dependencyInjectionBasic.Phonebook">
 		<constructor-arg>
-			<ref bean="multiplePhoneOwnerBean"></ref>
+			<ref bean="multiplePhoneOwnerBean" />
 		</constructor-arg>
 		<constructor-arg>
 			<list>
