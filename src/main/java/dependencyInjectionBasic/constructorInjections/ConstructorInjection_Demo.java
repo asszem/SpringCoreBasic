@@ -10,23 +10,20 @@ public class ConstructorInjection_Demo {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("appCtxConstructorInjection.xml");
 
-		System.out.println("Dependency Injection by Constructor arguments");
-		PhoneOwner user1 = (PhoneOwner) context.getBean("phoneUserBean");
+		System.out.println("\nDependency Injection by Constructor arguments");
+		System.out.print("\nInstantiating object without any const-arg value in application context xml:");
+		PhoneOwner user1 = (PhoneOwner) context.getBean("phoneOwnerWithoutConstructorArgumentsBean");
 		user1.displayOwner();
 
-		PhoneOwner user2 = (PhoneOwner) context.getBean("phoneUserBean2");
+		System.out.print("\nInstantiating object with Name constructor argument");
+		PhoneOwner user2 = (PhoneOwner) context.getBean("phoneOwnerWithNameConstructorArgument");
 		user2.displayOwner();
 
-		PhoneOwner user3 = (PhoneOwner) context.getBean("phoneUserBean3");
+		System.out.print("\nThe setter method overwrites the constructor argument value:");
+		PhoneOwner user3 = (PhoneOwner) context.getBean("phoneOwnerWithConstructorANDSetterArgument");
 		user3.displayOwner();
 
-		System.out.print("\nThe setter method overwrites the constructor argument value:");
-		PhoneOwner user4 = (PhoneOwner) context.getBean("phoneUserBean4");
-		user4.displayOwner();
 
-		System.out.print("\nInstantiating object without any const-arg value in application context xml:");
-		PhoneOwner user5 = (PhoneOwner) context.getBean("phoneUserBean5");
-		user5.displayOwner();
 	}
 
 }

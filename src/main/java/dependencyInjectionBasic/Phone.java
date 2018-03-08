@@ -20,12 +20,12 @@ public class Phone {
 		this.vendor = vendor;
 		this.type = type;
 		this.color = color;
-		log.info("Phone Constructor with vendor, type and color arguments called");
+		log.info("Phone Constructor with vendor, type and color arguments called, NEW PhoneID created: "+id);
 	}
 
 	@Override
 	public String toString() {
-		return vendor + " " + type + " " + color+ " (id: "+id+")";
+		return vendor + " " + type + " " + color+ " <id: "+id+">";
 	}
 
 }

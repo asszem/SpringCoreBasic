@@ -18,14 +18,15 @@ public class PhoneSeller {
 		this.sellerId = count.incrementAndGet();
 		this.sellerName = sellerName;
 		this.customers = customers;
-		log.info("Phone Seller with sellerName and Map<String, PhoneOwner> constructor called");
+		log.info("Phone Seller with sellerName and Map<String, PhoneOwner> constructor called, NEW PhoneSellerID created: " + sellerId);
 	}
 
 	public void displaySeller() {
-		System.out.println("Seller name: " + sellerName);
+		System.out.println("\nSeller name: " + sellerName);
 		System.out.println("Seller id: " + sellerId);
 		customers.forEach((key, owner) -> {
 			System.out.println("Key: " + key);
+			System.out.print("Value:");
 			owner.displayOwner();
 		});
 	}

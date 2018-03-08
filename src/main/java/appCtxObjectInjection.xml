@@ -10,10 +10,12 @@
 		<constructor-arg value="Brown"></constructor-arg>
 	</bean>
 
-	<bean id="phoneUserBean" class="dependencyInjectionBasic.PhoneOwner">
-		<constructor-arg ><ref bean="smartPhoneBean"></ref></constructor-arg>
-		<constructor-arg value="100" type="int" ></constructor-arg>
-		<constructor-arg value="Huawei Owner"></constructor-arg>
+	<!-- Injecting a Phone object -->
+	<bean id="phoneOwnerBean" class="dependencyInjectionBasic.PhoneOwner">
+		<constructor-arg name="phone">
+			<ref bean="smartPhoneBean"></ref>
+		</constructor-arg>
+		<constructor-arg name="ownerNameArgument" value="Huawei Owner"></constructor-arg>
 	</bean>
 
 

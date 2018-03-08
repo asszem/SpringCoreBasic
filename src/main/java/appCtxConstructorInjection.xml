@@ -4,23 +4,21 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans  
                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="phoneUserBean" class="dependencyInjectionBasic.PhoneOwner">
-		<constructor-arg value="10" type="int"></constructor-arg>
+	<!-- Instantiating Bean without any arguments -->
+	<bean id="phoneOwnerWithoutConstructorArgumentsBean" class="dependencyInjectionBasic.PhoneOwner">
 	</bean>
-	<bean id="phoneUserBean2" class="dependencyInjectionBasic.PhoneOwner">
-		<constructor-arg value="Constructor Arg Name" type="String"></constructor-arg>
-	</bean>
-	<bean id="phoneUserBean3" class="dependencyInjectionBasic.PhoneOwner">
-		<constructor-arg value="Constructor Arg Name and Setter for Id(123)"
+
+	<!-- Instantiating Bean with Name argument -->
+	<bean id="phoneOwnerWithNameConstructorArgument" class="dependencyInjectionBasic.PhoneOwner">
+		<constructor-arg name="ownerNameArgument" value="Constructor Arg Name"
 			type="String"></constructor-arg>
-		<property name="userId" value="123"></property>
 	</bean>
-	<bean id="phoneUserBean4" class="dependencyInjectionBasic.PhoneOwner">
-		<constructor-arg value="Original Constructor Arg Name"
-			type="String"></constructor-arg>
-		<property name="userName" value="Setter Name"></property>
-	</bean>
-	<bean id="phoneUserBean5" class="dependencyInjectionBasic.PhoneOwner">
+
+	<bean id="phoneOwnerWithConstructorANDSetterArgument" class="dependencyInjectionBasic.PhoneOwner">
+		<constructor-arg name="ownerNameArgument" value="Original Constructor Arg Name"></constructor-arg>
+		<!-- The 'name' value should be the name of the setter methodm, in this 
+			case: setOwnerName -->
+		<property name="ownerName" value="Setter Name"></property>
 	</bean>
 
 </beans>  

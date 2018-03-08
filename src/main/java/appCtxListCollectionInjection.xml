@@ -16,32 +16,22 @@
 		<constructor-arg value="Black"></constructor-arg>
 	</bean>
 
-	<!-- Phone Owner with one phone injected -->
-	<bean id="singlePhoneOwnerBean" class="dependencyInjectionBasic.PhoneOwner">
-		<constructor-arg value="1" type="int"></constructor-arg>
-		<constructor-arg value="Single phone owner"></constructor-arg>
-		<constructor-arg>
-			<ref bean="smartPhoneBean"></ref>
-		</constructor-arg>
-	</bean>
-
-	<!-- Phone Owner with multiple phone objects injected as list -->
+	<!-- Phone Owner with multiple phone objects injected as list elements -->
 	<bean id="multiplePhoneOwnerBean" class="dependencyInjectionBasic.PhoneOwner">
-		<constructor-arg value="2" type="int"></constructor-arg>
 		<constructor-arg value="Multi phone owner"></constructor-arg>
 		<constructor-arg>
-		<list>
-		<ref bean="smartPhoneBean"></ref>
-		<ref bean="smartPhoneBean"></ref>
-		<ref bean="smartPhoneBean2"></ref>
-		</list>
+			<list>
+				<ref bean="smartPhoneBean"></ref>
+				<ref bean="smartPhoneBean"></ref>
+				<ref bean="smartPhoneBean2"></ref>
+			</list>
 		</constructor-arg>
 	</bean>
 
+	<!-- Phone book with multiple String values injected as list elements -->
 	<bean id="phoneBookBean" class="dependencyInjectionBasic.Phonebook">
-		<constructor-arg value="1" type="int"></constructor-arg>
 		<constructor-arg>
-			<ref bean="singlePhoneOwnerBean"></ref>
+			<ref bean="multiplePhoneOwnerBean"></ref>
 		</constructor-arg>
 		<constructor-arg>
 			<list>
@@ -52,5 +42,4 @@
 			</list>
 		</constructor-arg>
 	</bean>
-
 </beans>  

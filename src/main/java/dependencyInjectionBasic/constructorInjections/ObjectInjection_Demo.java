@@ -6,12 +6,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import dependencyInjectionBasic.PhoneOwner;
 
-public class DependentObjectInjection_Demo {
+public class ObjectInjection_Demo {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("appCtxObjectInjection.xml");
 
 		System.out.println("Dependent Object Injection in Constructor argument");
-		PhoneOwner user1 = (PhoneOwner) context.getBean("phoneUserBean");
+		PhoneOwner user1 = (PhoneOwner) context.getBean("phoneOwnerBean");
 		user1.displayOwner();
 		
 	}

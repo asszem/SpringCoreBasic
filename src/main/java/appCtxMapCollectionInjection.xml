@@ -18,7 +18,6 @@
 
 	<!-- Phone Owner with one phone injected -->
 	<bean id="singlePhoneOwnerBean" class="dependencyInjectionBasic.PhoneOwner">
-		<constructor-arg value="1" type="int"></constructor-arg>
 		<constructor-arg value="Huawei Henry"></constructor-arg>
 		<constructor-arg>
 			<ref bean="huaweiPhone"></ref>
@@ -27,21 +26,21 @@
 
 	<!-- Phone Owner with one phone injected -->
 	<bean id="singlePhoneOwnerBean2" class="dependencyInjectionBasic.PhoneOwner">
-		<constructor-arg value="2" type="int"></constructor-arg>
 		<constructor-arg value="Samsung Sam"></constructor-arg>
 		<constructor-arg>
 			<ref bean="samsungPhone"></ref>
 		</constructor-arg>
 	</bean>
-	
+
+	<!-- Injecting Map collection with a String and an Object bean reference -->
 	<bean id="sellerBean" class="dependencyInjectionBasic.PhoneSeller">
 		<constructor-arg value="Seller Name"></constructor-arg>
 		<constructor-arg>
 			<map>
-			<entry key="customer1" value-ref="singlePhoneOwnerBean"></entry>
-			<entry key="customer2" value-ref="singlePhoneOwnerBean2"></entry>
-			</map>	
-		
+				<entry key="customer1" value-ref="singlePhoneOwnerBean"></entry>
+				<entry key="customer2" value-ref="singlePhoneOwnerBean2"></entry>
+			</map>
+
 		</constructor-arg>
 	</bean>
 

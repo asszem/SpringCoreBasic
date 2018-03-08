@@ -1,6 +1,7 @@
 package dependencyInjectionBasic;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
@@ -8,6 +9,7 @@ import org.apache.logging.log4j.core.Logger;
 public class PhoneOwner {
 
 	private static final Logger log = (Logger) LogManager.getLogger(PhoneOwner.class);
+	private static AtomicInteger count=new AtomicInteger();
 
 	private String ownerName;
 	private int ownerId;
@@ -16,46 +18,38 @@ public class PhoneOwner {
 	private List<Phone> ownerPhones;
 
 	public PhoneOwner() {
+		this.ownerId=count.getAndIncrement();
 		instantiatedBy = "Empty constructor";
-		log.info("Phone Owner empty constructor called");
+		log.info("Phone Owner empty constructor called, NEW OwnerID created: " + ownerId);
 	}
 
-	public PhoneOwner(String name) {
-		ownerName = name;
+	public PhoneOwner(String ownerNameArgument) {
+		this();
+		ownerName = ownerNameArgument;
 		instantiatedBy = "User name constructor argument";
-		log.info("Phone Owner constructor with name argument called");
+		log.info("Phone Owner constructor with name argument called for OwnerID: " + ownerId);
 	}
 
-	public PhoneOwner(int newId) {
-		ownerId = newId;
-		instantiatedBy = "User Id constructor argument";
-		log.info("Phone Owner constructor with Id argument called");
-	}
-
-	public PhoneOwner(int userId, String userName, Phone phone) {
-		this.ownerId = userId;
-		this.ownerName = userName;
+	public PhoneOwner(String ownerNameArgument, Phone phone) {
+		this();
+		this.ownerName = ownerNameArgument;
 		this.ownerPhone = phone;
-		this.instantiatedBy = "User Id, name and phone constructor arguments";
-		log.info("Phone Owner constructor with Id, name and Phone arguments called");
+		this.instantiatedBy = "Owner Name and Phone constructor arguments";
+		log.info("Phone Owner constructor with Name and Phone arguments called for OwnerID: "+ownerId);
 	}
 
-	public PhoneOwner(int ownerId, String ownerName, List<Phone> phones) {
-		this.ownerId = ownerId;
-		this.ownerName = ownerName;
+	public PhoneOwner(String ownerNameArgument, List<Phone> phones) {
+		this();
+		this.ownerName = ownerNameArgument;
 		this.ownerPhones = phones;
-		this.instantiatedBy = "User Id, name and phoneS constructor arguments";
-		log.info("Phone Owner constructor with Id, name and List<Phone> arguments called");
+		this.instantiatedBy = "Owner Name and PhoneS constructor arguments";
+		log.info("Phone Owner constructor with Name and List<Phone> arguments called for OwnerID: " + ownerId);
 
 	}
 
 	// Setter methods MUST be defined for passing value (dependency injection) from the Application Context
-	public void setUserName(String newUserName) {
-		this.ownerName = newUserName;
-	}
-
-	public void setUserId(int newId) {
-		this.ownerId = newId;
+	public void setOwnerName(String newOwnerName) {
+		this.ownerName = newOwnerName;
 	}
 
 	public void displayOwner() {
