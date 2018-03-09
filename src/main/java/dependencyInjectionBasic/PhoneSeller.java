@@ -23,7 +23,7 @@ public class PhoneSeller {
 		this();
 		this.sellerName = sellerName;
 		this.customers = customers;
-		log.info("Phone Seller with sellerName and Map<String, PhoneOwner> constructor called, for PhoneSellerID: " + sellerId);
+		log.info("Phone Seller with sellerName and Map<String, Owner> constructor called, for PhoneSellerID: " + sellerId);
 	}
 	
 	

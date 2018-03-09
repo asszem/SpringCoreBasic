@@ -8,6 +8,11 @@
 		<property name="vendor" value="AutowiredByType" />
 	</bean>
 
+	<!-- This bean will be excluded from autowiring, so its not a problem if it is same type as ownerPhone -->
+	<bean id="ownerPhoneExcluded" class="dependencyInjectionBasic.Phone" autowire-candidate="false">
+		<property name="vendor" value="AutowiredByType" />
+	</bean>
+
 	<!-- Auto-Wiring byType -->
 	<!-- Spring will look T beans whose type is assigned to the property’s type -->
 	<!-- There must be only ONE bean of the type that is to be autowired -->

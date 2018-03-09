@@ -19,7 +19,7 @@ public class Phonebook {
 		this.id=count.getAndIncrement();
 		this.owner=owner;
 		this.contacts=contacts;
-		this.instantiationMethod="Constructor with id, PhoneOwner object and contacts list args";
+		this.instantiationMethod="Constructor with id, Owner object and contacts list args";
 		log.info("Phonebook Constructor with vendor, type and color arguments called, NEW PhonebookID created: " + id);
 	}
 
