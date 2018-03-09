@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- Bean to be autowired -->
+	<!-- The name of the BEAN 'ownerPhone' must be the same as the name of the property (and the Setter method) -->
+	<bean id="ownerPhone" class="dependencyInjectionBasic.Phone">
+		<property name="vendor" value="AutowiredByType" />
+	</bean>
+
+	<!-- Auto-Wiring byType -->
+	<!-- Spring will look T beans whose type is assigned to the property’s type -->
+	<!-- There must be only ONE bean of the type that is to be autowired -->
+	<bean id="phoneOwnerAutowiringByType" class="dependencyInjectionBasic.PhoneOwner" autowire="byType" />
+
+
+
+</beans>  

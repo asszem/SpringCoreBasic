@@ -30,6 +30,13 @@ public class PhoneOwner {
 		log.info("Phone Owner constructor with name argument called for OwnerID: " + ownerId);
 	}
 
+	public PhoneOwner(Phone phone) {
+		this();
+		this.ownerPhone = phone;
+		this.instantiatedBy = "Owner Phone constructor argument";
+		log.info("Phone Owner constructor with Phone arguments called for OwnerID: "+ownerId);
+	}
+
 	public PhoneOwner(String ownerNameArgument, Phone phone) {
 		this();
 		this.ownerName = ownerNameArgument;
@@ -64,12 +71,12 @@ public class PhoneOwner {
 	}
 
 	public void displayOwner() {
-		System.out.printf("%nDisplay Phone Owner%n\tID:[%s]%n\tname:[%s]%n\tPhone:[%s]%n\tinstantiated by:[%s]%n",
+		System.out.printf("***********%nPhone Owner%nID:[%s]%nName:[%s]%sinstantiated by:[%s]%n***********%n",
 				ownerId, ownerName, ownerPhone == null ? "null" : ownerPhone, instantiatedBy);
 	}
 
 	public void displayOwnerPhones() {
-		System.out.printf("%nDisplay Phones for Owner%n\tID:[%s]%n\tname:[%s]" + "%n\tinstantiated by:[%s]%n", ownerId,
+		System.out.printf("Phones for Owner%n\tID:[%s]%n\tname:[%s]" + "%n\tinstantiated by:[%s]%n", ownerId,
 				ownerName, instantiatedBy);
 		ownerPhones.forEach((phone)->{System.out.println("\t"+phone);});
 	}
