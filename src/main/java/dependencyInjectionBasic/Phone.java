@@ -4,6 +4,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
+import org.springframework.stereotype.Component;
 
 public class Phone {
 	private static AtomicInteger count = new AtomicInteger();
