@@ -3,22 +3,22 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
 	<!-- No properties set, empty constructor is called -->
-	<bean id="defaultPhone" class="dependencyInjectionBasic.Phone" />
+	<bean id="defaultPhone" class="xmlBasedContainerConfiguration.Phone" />
 
 	<!-- Bean to be autowired -->
 	<!-- The name of the BEAN 'ownerPhone' must be the same as the name of the property (and the Setter method) -->
-	<bean id="ownerPhone" class="dependencyInjectionBasic.Phone">
+	<bean id="ownerPhone" class="xmlBasedContainerConfiguration.Phone">
 		<property name="vendor" value="AutowiredByName" />
 	</bean>
 
 	<!-- No autowiring - Default -->
 	<!-- Manually define property and/or constructor arguments -->
-	<bean id="phoneOwnerNoAutowiring" class="dependencyInjectionBasic.PhoneOwner">
+	<bean id="phoneOwnerNoAutowiring" class="xmlBasedContainerConfiguration.PhoneOwner">
 		<property name="ownerPhone" ref="defaultPhone" />
 	</bean>
 
 	<!-- Auto-Wiring byName -->
 	<!-- if the [NAME of a bean] is same as the [name of other bean PROPERTY], auto wire it -->
-	<bean id="phoneOwnerAutowiringByName" class="dependencyInjectionBasic.PhoneOwner" autowire="byName" />
+	<bean id="phoneOwnerAutowiringByName" class="xmlBasedContainerConfiguration.PhoneOwner" autowire="byName" />
 
 </beans>  

@@ -1,4 +1,4 @@
-package dependencyInjectionBasic;
+package xmlBasedContainerConfiguration;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

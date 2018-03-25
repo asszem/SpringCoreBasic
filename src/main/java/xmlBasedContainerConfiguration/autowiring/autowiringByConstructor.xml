@@ -4,12 +4,12 @@
 
 	<!-- This is the SOURCE of autowiring -->
 	<!-- No constructor arguments needed -->
-	<bean id="defaultPhone" class="dependencyInjectionBasic.Phone" />
+	<bean id="defaultPhone" class="xmlBasedContainerConfiguration.Phone" />
 
 	<!-- Auto-Wiring Constructor -->
 	<!-- This is the bean that is doing the autowiring -->
 	<!-- If data type of a bean is same as the data type of other bean constructor argument, auto wire it. -->
 	<!-- There must be a constructor with only one argument 'phone' to be able to autowire -->
-	<bean id="phoneOwnerAutowiringByConstructor" class="dependencyInjectionBasic.PhoneOwner" autowire="constructor" />
+	<bean id="phoneOwnerAutowiringByConstructor" class="xmlBasedContainerConfiguration.PhoneOwner" autowire="constructor" />
 
 </beans>  

@@ -5,15 +5,15 @@
                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
 	<!-- Instantiating Bean without any arguments -->
-	<bean id="phoneOwnerWithoutConstructorArgumentsBean" class="dependencyInjectionBasic.PhoneOwner" />
+	<bean id="phoneOwnerWithoutConstructorArgumentsBean" class="xmlBasedContainerConfiguration.PhoneOwner" />
 
 	<!-- Instantiating Bean with Name argument -->
-	<bean id="phoneOwnerWithNameConstructorArgument" class="dependencyInjectionBasic.PhoneOwner">
+	<bean id="phoneOwnerWithNameConstructorArgument" class="xmlBasedContainerConfiguration.PhoneOwner">
 		<constructor-arg name="ownerNameArgument" value="Constructor Arg Name"
 			type="String" />
 	</bean>
 
-	<bean id="phoneOwnerWithConstructorANDSetterArgument" class="dependencyInjectionBasic.PhoneOwner">
+	<bean id="phoneOwnerWithConstructorANDSetterArgument" class="xmlBasedContainerConfiguration.PhoneOwner">
 		<constructor-arg name="ownerNameArgument" value="Original Constructor Arg Name" />
 		<!-- The 'name' value should be the name of the setter methodm, in this 
 			case: setOwnerName -->

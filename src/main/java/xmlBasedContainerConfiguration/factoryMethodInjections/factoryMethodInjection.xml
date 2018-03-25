@@ -3,14 +3,14 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
 	<!-- Static factory method that returns instance of its own class (singleton) -->
-	<bean id="tabletWithoutArguments" class="dependencyInjectionBasic.Tablet" factory-method="getTablet" />
+	<bean id="tabletWithoutArguments" class="xmlBasedContainerConfiguration.Tablet" factory-method="getTablet" />
 
 	<!-- Static factory method that returns instance of ANOTHER class -->
-	<bean id="tabletFactoryGetPhone" class="dependencyInjectionBasic.Tablet" factory-method="getPhone" />
+	<bean id="tabletFactoryGetPhone" class="xmlBasedContainerConfiguration.Tablet" factory-method="getPhone" />
 
 	<!-- Non-Static factory method that returns instance of ANOTHER class -->
-	<bean id="tabletBean" class="dependencyInjectionBasic.Tablet"/>
-	<bean id="tabletNonStaticFactoryGetPhone" class="dependencyInjectionBasic.Tablet" factory-method="createPhone" factory-bean="tabletBean" />
+	<bean id="tabletBean" class="xmlBasedContainerConfiguration.Tablet"/>
+	<bean id="tabletNonStaticFactoryGetPhone" class="xmlBasedContainerConfiguration.Tablet" factory-method="createPhone" factory-bean="tabletBean" />
 
 
 

@@ -1,14 +1,14 @@
 //Source: https://www.javatpoint.com/steps-to-create-spring-application
-package dependencyInjectionBasic.constructorInjections;
+package xmlBasedContainerConfiguration.constructorInjections;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import dependencyInjectionBasic.PhoneOwner;
+import xmlBasedContainerConfiguration.PhoneOwner;
 
 public class ConstructorInjection_Demo {
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("/dependencyInjectionBasic/constructorInjections/appCtxConstructorInjection.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("/xmlBasedContainerConfiguration/constructorInjections/appCtxConstructorInjection.xml");
 
 		System.out.println("\nDependency Injection by Constructor arguments");
 		System.out.print("\nInstantiating object without any const-arg value in application context xml:");

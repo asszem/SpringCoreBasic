@@ -7,7 +7,7 @@
 	<import resource="../PhoneBeans.xml"></import>
 
 	<!-- Phone Owner with one phone injected -->
-	<bean id="singlePhoneOwnerBean" class="dependencyInjectionBasic.PhoneOwner">
+	<bean id="singlePhoneOwnerBean" class="xmlBasedContainerConfiguration.PhoneOwner">
 		<constructor-arg value="Huawei Henry" />
 		<constructor-arg>
 			<ref bean="huaweiPhone" />
@@ -15,7 +15,7 @@
 	</bean>
 
 	<!-- Phone Owner with one phone injected -->
-	<bean id="singlePhoneOwnerBean2" class="dependencyInjectionBasic.PhoneOwner">
+	<bean id="singlePhoneOwnerBean2" class="xmlBasedContainerConfiguration.PhoneOwner">
 		<constructor-arg value="Samsung Sam" />
 		<constructor-arg>
 			<ref bean="samsungPhone" />
@@ -23,7 +23,7 @@
 	</bean>
 
 	<!-- Injecting Map collection with a String and an Object bean reference -->
-	<bean id="sellerBean" class="dependencyInjectionBasic.PhoneSeller">
+	<bean id="sellerBean" class="xmlBasedContainerConfiguration.PhoneSeller">
 		<constructor-arg value="Seller Name" />
 		<constructor-arg>
 			<map>

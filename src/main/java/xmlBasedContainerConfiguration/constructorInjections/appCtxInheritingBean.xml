@@ -7,20 +7,20 @@
 
 	<!-- This bean is going to be inherited, to avoid parameter ambiguity add 
 		the "name" and/or 'type' attribute -->
-	<bean id="samsungPhone" class="dependencyInjectionBasic.Phone">
+	<bean id="samsungPhone" class="xmlBasedContainerConfiguration.Phone">
 		<constructor-arg name="vendor" value="Samsung" type="String" />
 		<constructor-arg name="type" value="Galaxy S9" />
 		<constructor-arg name="color" value="Black" />
 	</bean>
 
 	<!-- This is the inherited method, with one different argument -->
-	<bean id="samsungPhoneInherited" class="dependencyInjectionBasic.Phone"
+	<bean id="samsungPhoneInherited" class="xmlBasedContainerConfiguration.Phone"
 		parent="samsungPhone">
 		<constructor-arg name="color" value="Inherited White" />
 	</bean>
 
 	<!-- Phone Owner injected with the inherited phone -->
-	<bean id="singlePhoneOwnerBean" class="dependencyInjectionBasic.PhoneOwner">
+	<bean id="singlePhoneOwnerBean" class="xmlBasedContainerConfiguration.PhoneOwner">
 		<constructor-arg name="ownerNameArgument" value="Samsung Sam" />
 		<constructor-arg>
 			<ref bean="samsungPhoneInherited"></ref>
@@ -28,7 +28,7 @@
 	</bean>
 
 	<!-- Parent bean will be inherited, name or type attribute must be defined -->
-	<bean id="originalSellerBean" class="dependencyInjectionBasic.PhoneSeller">
+	<bean id="originalSellerBean" class="xmlBasedContainerConfiguration.PhoneSeller">
 		<constructor-arg name="sellerName" value="Original Seller Name" />
 		<constructor-arg name="customers">
 			<map>
@@ -38,7 +38,7 @@
 	</bean>
 
 	<!-- Inherited bean -->
-	<bean id="inheritedSellerBean" class="dependencyInjectionBasic.PhoneSeller"
+	<bean id="inheritedSellerBean" class="xmlBasedContainerConfiguration.PhoneSeller"
 		parent="originalSellerBean">
 		<constructor-arg name="sellerName" value="Inherited Seller Name" />
 		<constructor-arg name="customers">

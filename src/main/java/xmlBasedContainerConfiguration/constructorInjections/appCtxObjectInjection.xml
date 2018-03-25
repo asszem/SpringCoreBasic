@@ -4,20 +4,19 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans  
                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="huaweiPhone" class="dependencyInjectionBasic.Phone">
+	<bean id="smartPhoneBean" class="xmlBasedContainerConfiguration.Phone">
 		<constructor-arg value="Huawei" />
 		<constructor-arg value="P10" />
 		<constructor-arg value="Brown" />
 	</bean>
 
-	<bean id="samsungPhone" class="dependencyInjectionBasic.Phone">
-		<constructor-arg name="vendor" value="Samsung" />
-		<constructor-arg name="type" value="Galaxy S9" />
-		<constructor-arg name="color" value="Black" />
+	<!-- Injecting a Phone object -->
+	<bean id="phoneOwnerBean" class="xmlBasedContainerConfiguration.PhoneOwner">
+		<constructor-arg name="phone">
+			<ref bean="smartPhoneBean" />
+		</constructor-arg>
+		<constructor-arg name="ownerNameArgument" value="Huawei Owner" />
 	</bean>
 
-	<bean id="samsungPhoneInherited" class="dependencyInjectionBasic.Phone"
-		parent="samsungPhone">
-		<constructor-arg name="color" value="Inherited White" />
-	</bean>
-</beans>
+
+</beans>  

@@ -1,10 +1,10 @@
-package dependencyInjectionBasic.factoryMethodInjections;
+package xmlBasedContainerConfiguration.factoryMethodInjections;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import dependencyInjectionBasic.Phone;
-import dependencyInjectionBasic.Tablet;
+import xmlBasedContainerConfiguration.Phone;
+import xmlBasedContainerConfiguration.Tablet;
 
 public class FactoryMethodInjections_Demo {
 
@@ -13,7 +13,7 @@ public class FactoryMethodInjections_Demo {
 		System.out.println("Tablet created by Factory method: " + tablet);
 
 		ApplicationContext context = new ClassPathXmlApplicationContext(
-				"/dependencyInjectionBasic/factoryMethodInjections/factoryMethodInjection.xml");
+				"/xmlBasedContainerConfiguration/factoryMethodInjections/factoryMethodInjection.xml");
 
 		tablet=context.getBean("tabletWithoutArguments", Tablet.class);
 		System.out.println("Tablet injected by Static Factory method: " + tablet);

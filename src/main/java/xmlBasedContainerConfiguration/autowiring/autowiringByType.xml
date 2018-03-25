@@ -4,19 +4,19 @@
 
 	<!-- Bean to be autowired -->
 	<!-- The name of the BEAN 'ownerPhone' must be the same as the name of the property (and the Setter method) -->
-	<bean id="ownerPhone" class="dependencyInjectionBasic.Phone">
+	<bean id="ownerPhone" class="xmlBasedContainerConfiguration.Phone">
 		<property name="vendor" value="AutowiredByType" />
 	</bean>
 
 	<!-- This bean will be excluded from autowiring, so its not a problem if it is same type as ownerPhone -->
-	<bean id="ownerPhoneExcluded" class="dependencyInjectionBasic.Phone" autowire-candidate="false">
+	<bean id="ownerPhoneExcluded" class="xmlBasedContainerConfiguration.Phone" autowire-candidate="false">
 		<property name="vendor" value="AutowiredByType" />
 	</bean>
 
 	<!-- Auto-Wiring byType -->
 	<!-- Spring will look T beans whose type is assigned to the property’s type -->
 	<!-- There must be only ONE bean of the type that is to be autowired -->
-	<bean id="phoneOwnerAutowiringByType" class="dependencyInjectionBasic.PhoneOwner" autowire="byType" />
+	<bean id="phoneOwnerAutowiringByType" class="xmlBasedContainerConfiguration.PhoneOwner" autowire="byType" />
 
 
 

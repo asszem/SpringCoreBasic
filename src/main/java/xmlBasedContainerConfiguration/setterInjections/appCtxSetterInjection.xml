@@ -7,13 +7,13 @@
 	<import resource="../PhoneBeans.xml"></import>
 
 	<!-- String and Object Setter injection -->
-	<bean id="ownerNameBySetter" class="dependencyInjectionBasic.PhoneOwner">
+	<bean id="ownerNameBySetter" class="xmlBasedContainerConfiguration.PhoneOwner">
 		<property name="ownerName" value="Owner Name from Setter" />
 		<property name="ownerPhone" ref="samsungPhone" />
 	</bean>
 
 	<!-- List Setter injection -->
-	<bean id="multiplePhoneOwnerBySetter" class="dependencyInjectionBasic.PhoneOwner">
+	<bean id="multiplePhoneOwnerBySetter" class="xmlBasedContainerConfiguration.PhoneOwner">
 		<property name="ownerPhones">
 			<list>
 				<ref bean="samsungPhone"></ref>
@@ -24,7 +24,7 @@
 	</bean>
 
 	<!-- Injecting multiple setters (a Map Setter AND a String setter) -->
-	<bean id="sellerMapBySetter" class="dependencyInjectionBasic.PhoneSeller">
+	<bean id="sellerMapBySetter" class="xmlBasedContainerConfiguration.PhoneSeller">
 		<!-- for setSellerName() method -->
 		<property name="sellerName" value="Seller Map Setter Injection" />
 		<!-- for setSellerCustomers() method -->
