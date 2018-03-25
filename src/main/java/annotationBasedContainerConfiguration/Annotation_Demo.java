@@ -12,6 +12,8 @@ public class Annotation_Demo {
 		
 		Owner owner = context.getBean("thisIsTheOwnerBean", Owner.class);
 		System.out.println(owner);
+		
+		
 	}
 
 }
